@@ -12,12 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_11_28_230353) do
 
-  create_table "mpages", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "mypages", force: :cascade do |t|
+  create_table "mpages", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
