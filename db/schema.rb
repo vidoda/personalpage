@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_183716) do
+ActiveRecord::Schema.define(version: 2019_11_28_230353) do
 
   create_table "mpages", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -18,6 +18,24 @@ ActiveRecord::Schema.define(version: 2019_09_23_183716) do
   end
 
   create_table "mypages", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "naturality"
+    t.date "dob"
+    t.string "gender"
+    t.string "email"
+    t.string "residence"
+    t.integer "cp"
+    t.integer "cellphone"
+    t.string "occupation"
+    t.text "comentary"
+    t.string "city"
+    t.string "country"
+    t.string "emergency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

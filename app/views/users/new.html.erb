@@ -1,0 +1,46 @@
+
+<div class="container">
+  <!-- <form id="contact" action=""> -->
+    <div class="registo d-flex justify-content-center">
+      <h3 class="text-success"><b>REGISTO</b></h3>
+    </div>
+    <div class="arg d-flex justify-content-center">
+      <h4>Este questionário muamua mua mua mua mua bla bla bla </h4>
+    </div>
+    <fieldset>
+
+          <%= simple_form_for @user  do |f| %>
+            <%= f.input :name, label: 'Nome Completo'%>
+             <%= f.input :gender, collection: [:Femenino, :Masculino], include_blank: "Escolha o género"%>
+
+
+            <%= f.input :naturality, collection: [:Cabo_Delgado, :Gaza, :Inhambane, :Manica,  :Maputo_província, :Maputo_cidade, :Nampula, :Niassa, :Sofala, :Tete, :Zambézia], include_blank: "Escolha a província"%>
+
+            <%= f.input :cellphone, label: 'Telemóvel'%>
+            <%= f.input :email, label: 'Email' %>
+            <%= f.input :residence, label: 'Residência actual', hint: 'ex: Rua de São Tiago nº 25'%>
+            <%= f.input :cp, label: 'Código Postal' %>
+            <%= f.input :city, label: 'Cidade de residência'%>
+            <%= f.label :country, label: 'Pais de Residência'  %>
+            <%= f.country_select :country, {priority_countries: ["MZ", "PT"], include_blank: "Seleciona o País"}, class: 'form-control', label: 'País de residência actual' %>
+            <%= f.input :dob, as: :date, start_year: Date.today.year - 10,
+                                          end_year: Date.today.year - 75, discard_day: true,
+                                          order: [:month, :year], label: 'Data de Nascimento' %>
+
+
+            <%= f.input :occupation, label: 'Ocupação atual'%>
+
+            <%= f.input :emergency, label: 'Contacto de Emergência'%>
+            <%= f.input :comentary, label: 'Comentários em Relação ao Site/AMOAVE' %>
+
+          <div class="row justify-content-center">
+            <div class="form-actions col-xs-12 col-sm-4 col-sm-offset-4">
+            <%= f.button :submit, "Registar", class: 'btn btn-success' %>
+            </div>
+          </div>
+
+          <% end %>
+
+    </fieldset>
+  </form>
+</div>
